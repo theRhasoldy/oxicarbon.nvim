@@ -4,7 +4,7 @@ vim.api.nvim_set_var("colors_name", colorscheme_name)
 local colorscheme = require(colorscheme_name)
 
 local colors = {
-  -- background = { "#161520", 1 },
+  none = { nil, 0 },
   background = { "#121212", 1 },
   normal = { "#d9d5ee", 2 },
   faded = { "#5a566f", 3 },
@@ -29,8 +29,8 @@ local colors = {
 
 colorscheme.highlight_all({
   -- Editor UI {{{
-  ColorColumn = { fg = colors.background, reverse = true },
-  NormalFloat = { bg = colors.background },
+  ColorColumn = { fg = colors.none, reverse = true },
+  NormalFloat = { bg = colors.none },
   FloatBorder = { bg = colors.background, fg = colors.faded_darker },
   Pmenu = function(self)
     return { fg = self.Normal.fg, bg = colors.faded_darker }
@@ -82,7 +82,7 @@ colorscheme.highlight_all({
 
   -- Plaintext {{{
   -- Basic styles {{{
-  Normal = { fg = colors.normal, bg = colors.background },
+  Normal = { fg = colors.normal, bg = colors.none },
   Title = { fg = colors.faded, bold = true },
   Bold = { bold = true },
   Italic = { italic = true },
@@ -389,7 +389,7 @@ colorscheme.highlight_all({
   SagaNormal = { bg = colors.background },
   TitleString = { fg = colors.plump, bold = true },
   TitleIcon = "TitleString",
-  TitleSymbol = { bg = colors.background },
+  TitleSymbol = { bg = colors.none },
   TitleFileIcon = "Title",
   RenameBorder = { fg = colors.plump },
   RenameNormal = { fg = colors.plump },
