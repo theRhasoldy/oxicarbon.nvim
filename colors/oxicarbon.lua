@@ -6,25 +6,27 @@ local colorscheme = require(colorscheme_name)
 local colors = {
   none = { nil, 0 },
   background = { "#121212", 1 },
-  normal = { "#d9d5ee", 2 },
-  faded = { "#5a566f", 3 },
-  faded_lighter = { "#716d86", 4 },
-  faded_darker = { "#353344", 5 },
-  cursor = { "#2a2938", 6 },
-  pumpkin = { "#ffbdbf", 7 },
-  gum = { "#F69C99", 8 },
-  fire = { "#f68673", 9 },
-  plump = { "#e5759b", 10 },
-  violet = { "#cda9e0", 11 },
-  dawn = { "#c17ab2", 12 },
-  lukewarm = { "#50af84", 13 },
-  aqua = { "#4d8eae", 14 },
-  error = { "#ff5e77", 15 },
-  warning = { "#ffcda2", 16 },
-  diffAdd = { "#2D453F", 16 },
-  diffDelete = { "#6B373F", 16 },
-  diffChange = { "#3A2D45", 16 },
-  diffText = { "#5A4869", 16 },
+  normal = { "#ffffff", 2 },
+  faded = { "#525252", 3 },
+  faded_lighter = { "#6F6F6F", 4 },
+  faded_darker = { "#393939", 5 },
+  cursor = { "#262626", 6 },
+  teal_10 = { "#20D5D2", 8 },
+  teal_20 = { "#00BAB6", 7 },
+  teal_30 = { "#009E9A", 9 },
+  green = { "#56D679", 13 },
+  magenta_10 = { "#FF74B8", 14 },
+  magenta_20 = { "#EE5396", 12 },
+  purple_10 = { "#A56EFF", 11 },
+  purple_20 = { "#BE95FF", 10 },
+  blue = { "#1192E8", 15 },
+  red = { "#FF8389", 17 },
+  error = { "#ff5e77", 16 },
+  warning = { "#ffcda2", 17 },
+  diffAdd = { "#2D453F", 18 },
+  diffDelete = { "#6B373F", 19 },
+  diffChange = { "#3A2D45", 20 },
+  diffText = { "#5A4869", 21 },
 }
 
 colorscheme.highlight_all({
@@ -71,7 +73,7 @@ colorscheme.highlight_all({
   CursorColumn = { bg = colors.cursor },
   CursorLine = { bg = colors.cursor },
   CursorLineNr = function(self)
-    return { fg = colors.plump, bg = self.LineNr.bg, bold = true }
+    return { fg = colors.purple_20, bg = self.LineNr.bg, bold = true }
   end,
   -- }}}
 
@@ -94,41 +96,41 @@ colorscheme.highlight_all({
   Conceal = "NonText",
   EndOfBuffer = "NonText",
   -- Literals
-  Constant = { fg = colors.gum },
+  Constant = { fg = colors.teal_10 },
   String = { fg = colors.normal },
-  Character = { fg = colors.pumpkin },
-  Number = { fg = colors.gum },
+  Character = { fg = colors.teal_20 },
+  Number = { fg = colors.green },
   Float = "Number",
-  Boolean = { fg = colors.lukewarm },
+  Boolean = { fg = colors.green },
   -- Syntax
   Comment = { fg = colors.faded_lighter, italic = true },
-  Conditional = { fg = colors.violet, italic = true },
+  Conditional = { fg = colors.purple_10, italic = true },
   Debug = "WarningMsg",
-  Delimiter = { fg = colors.plump, bold = true },
-  Exception = { fg = colors.lukewarm, bold = true },
-  Function = { fg = colors.plump },
-  Identifier = { fg = colors.violet },
-  Keyword = { fg = colors.aqua },
-  Label = { fg = colors.gum, bold = true },
+  Delimiter = { fg = colors.red, bold = true },
+  Exception = { fg = colors.green, bold = true },
+  Function = { fg = colors.purple_20 },
+  Identifier = { fg = colors.purple_10 },
+  Keyword = { fg = colors.green, italic = true },
+  Label = { fg = colors.teal_10, bold = true },
   Noise = "Delimiter",
   Operator = { fg = colors.faded_lighter, bold = true },
-  Repeat = { fg = colors.plump, bold = true },
-  Statement = { fg = colors.lukewarm },
-  StorageClass = { fg = colors.fire, bold = true },
-  Structure = { fg = colors.lukewarm, bold = true },
+  Repeat = { fg = colors.purple_20, bold = true },
+  Statement = { fg = colors.green },
+  StorageClass = { fg = colors.teal_30, bold = true },
+  Structure = { fg = colors.green, bold = true },
   Tag = "Underlined",
-  Type = { fg = colors.dawn },
-  Typedef = { fg = colors.fire, italic = true },
+  Type = { fg = colors.blue },
+  Typedef = { fg = colors.blue, italic = true },
   -- Pre-processor
-  Define = { fg = colors.gum, nocombine = true },
-  Include = { fg = colors.aqua, nocombine = true },
-  Macro = { fg = colors.lukewarm, italic = true },
-  PreCondit = { fg = colors.pumpkin, italic = true },
-  PreProc = { fg = colors.pumpkin },
+  Define = { fg = colors.teal_10, nocombine = true },
+  Include = { fg = colors.magenta_10, nocombine = true },
+  Macro = { fg = colors.green, italic = true },
+  PreCondit = { fg = colors.teal_20, italic = true },
+  PreProc = { fg = colors.teal_20 },
   -- Special
-  Special = { fg = colors.pumpkin, bold = true },
-  SpecialChar = { fg = colors.lukewarm, italic = true },
-  SpecialComment = { fg = colors.pumpkin, bold = true, nocombine = true },
+  Special = { fg = colors.teal_20, bold = true },
+  SpecialChar = { fg = colors.green, italic = true },
+  SpecialComment = { fg = colors.teal_20, bold = true, nocombine = true },
   SpecialKey = "Character",
   -- InlayHints
   LSPInlayHint = { fg = colors.faded_lighter, italic = true },
@@ -143,13 +145,13 @@ colorscheme.highlight_all({
   ["@operator"] = "Operator", -- For any operator: +, but also -> and * in C.
   -- Punctuation
   ["@punctuation.delimiter"] = "Delimiter", -- For delimiters ie: .
-  ["@punctuation.bracket"] = { fg = colors.pumpkin }, -- For brackets and parenthesis.
-  ["@punctuation.special"] = { fg = colors.violet }, -- For special punctutation that does not fall in the catagories before.
+  ["@punctuation.bracket"] = { fg = colors.magenta_20 }, -- For brackets and parenthesis.
+  ["@punctuation.special"] = { fg = colors.green, bold = true },
   -- Literals
   ["@string"] = "String", -- For strings.
-  ["@string.regex"] = { fg = colors.gum, bold = true }, -- For regexes.
-  ["@string.escape"] = { fg = colors.fire, italic = true }, -- For escape characters within a string.
-  ["@string.special"] = { fg = colors.aqua }, -- other special strings (e.g. dates)
+  ["@string.regex"] = { fg = colors.teal_10, bold = true }, -- For regexes.
+  ["@string.escape"] = { fg = colors.teal_30, italic = true }, -- For escape characters within a string.
+  ["@string.special"] = { fg = colors.magenta_10 }, -- other special strings (e.g. dates)
   ["@character"] = "Character", -- character literals
   ["@character.special"] = "SpecialChar", -- special characters (e.g. wildcards)
   ["@boolean"] = "Boolean", -- For booleans.
@@ -157,20 +159,23 @@ colorscheme.highlight_all({
   ["@float"] = "Number", -- For floats.
   -- Functions
   ["@function"] = "Function", -- For function (calls and definitions).
-  ["@function.builtin"] = { fg = colors.fire }, -- For builtin functions: table.insert in Lua.
-  ["@function.call"] = "@function", -- function calls
-  ["@function.macro"] = { fg = colors.pumpkin }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
-  ["@method"] = { fg = colors.plump }, -- For method calls and definitions.
+  ["@function.builtin"] = { fg = colors.teal_30 }, -- For builtin functions: table.insert in Lua.
+  ["@function.call"] = { fg = colors.purple_20, bold = true }, -- function calls
+  ["@function.macro"] = { fg = colors.teal_20 }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
+  ["@function.method.vue"] = { fg = colors.magenta_10, bold = true },
+  ["@method"] = { fg = colors.purple_20 }, -- For method calls and definitions.
   ["@method.call"] = "@method", -- method calls
-  ["@constructor"] = { fg = colors.aqua }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-  ["@parameter"] = { fg = colors.violet, italic = true }, -- For parameters of a function.
+  ["@constructor"] = { fg = colors.magenta_10 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+  ["@parameter"] = { fg = colors.purple_10, italic = true }, -- For parameters of a function.
   -- Keywords
   ["@keyword"] = "Keyword", -- For keywords that don't fall in previous categories.
-  ["@keyword.function"] = { fg = colors.violet }, -- For keywords used to define a function.
-  ["@keyword.operator"] = { fg = colors.violet }, -- For new keyword operator
-  ["@keyword.return"] = { fg = colors.fire, bold = true, italic = true },
+  ["@keyword.function"] = { fg = colors.purple_10 }, -- For keywords used to define a function.
+  ["@keyword.operator"] = "Keyword", -- For new keyword operator
+  ["@keyword.coroutine"] = { fg = colors.red, italic = true }, -- For new keyword operator
+  ["@keyword.return"] = { fg = colors.red, bold = true, italic = true },
+  ["@keyword.import"] = { fg = colors.purple_10, italic = true },
   -- JS & derivative
-  ["@keyword.export"] = { fg = colors.fire, italic = true },
+  ["@keyword.export"] = { fg = colors.teal_30, italic = true },
   ["@conditional"] = "Conditional", -- For keywords related to conditionnals.
   ["@repeat"] = "Repeat", -- For keywords related to loops.
   -- @debug            ; keywords related to debugging
@@ -181,80 +186,83 @@ colorscheme.highlight_all({
 
   ["@type"] = "Type", -- For types.
   ["@type_identifier"] = "Type", -- For types.
-  ["@type.builtin"] = { fg = colors.lukewarm }, -- For builtin types.
+  ["@type.builtin"] = { fg = colors.blue, bold = true }, -- For builtin types.
   ["@type.definition"] = "Operator", -- type definitions (e.g. `typedef` in C)
-  ["@type.qualifier"] = { fg = colors.lukewarm }, -- type qualifiers (e.g. `const`)
+  ["@type.qualifier"] = { fg = colors.green }, -- type qualifiers (e.g. `const`)
   ["@storageclass"] = "StorageClass", -- visibility/life-time/etc. modifiers (e.g. `static`)
   ["@attribute"] = "Constant", -- attribute annotations (e.g. Python decorators)
-  ["@field"] = { fg = colors.violet }, -- For fields.
-  ["@property"] = { fg = colors.violet }, -- Same as TSField.
+  ["@field"] = { fg = colors.purple_10 }, -- For fields.
+  ["@property"] = { fg = colors.purple_10 }, -- Same as TSField.
   -- Identifiers
 
-  ["@variable"] = { fg = colors.pumpkin }, -- Any variable name that does not have another highlight.
-  ["@variable.builtin"] = { fg = colors.lukewarm }, -- Variable names that are defined by the languages, like this or self.
-  ["@constant"] = { fg = colors.gum }, -- For constants
-  ["@constant.builtin"] = { fg = colors.fire }, -- For constant that are built in the language: nil in Lua.
+  ["@variable"] = { fg = colors.teal_20 }, -- Any variable name that does not have another highlight.
+  ["@variable.builtin"] = { fg = colors.green }, -- Variable names that are defined by the languages, like this or self.
+  ["@variable.member"] = { fg = colors.magenta_10 }, -- Variable names that are defined by the languages, like this or self.
+  ["@variable.tsx"] = { fg = colors.magenta_10 }, -- Variable names that are defined by the languages, like this or self.
+  ["@constant"] = { fg = colors.teal_10 }, -- For constants
+  ["@constant.builtin"] = { fg = colors.teal_30 }, -- For constant that are built in the language: nil in Lua.
   ["@constant.macro"] = "Macro", -- For constants that are defined by macros: NULL in C.
-  ["@namespace"] = { fg = colors.lukewarm, italic = true }, -- For identifiers referring to modules and namespaces.
-  ["@symbol"] = { fg = colors.gum },
+  ["@namespace"] = { fg = colors.green, italic = true }, -- For identifiers referring to modules and namespaces.
+  ["@symbol"] = { fg = colors.teal_10 },
   -- Text
 
   ["@text"] = { fg = colors.normal }, -- For strings considerated text in a markup language.
-  ["@text.strong"] = { fg = colors.pumpkin, bold = true }, -- bold
-  ["@text.emphasis"] = { fg = colors.pumpkin, italic = true }, -- italic
+  ["@text.strong"] = { fg = colors.teal_20, bold = true }, -- bold
+  ["@text.emphasis"] = { fg = colors.teal_20, italic = true }, -- italic
   ["@text.underline"] = "Underline", -- underlined text
   ["@text.strike"] = { fg = colors.normal, strikethrough = true }, -- strikethrough text
-  ["@text.title"] = "Ttile", -- titles like: # Example
-  ["@text.literal"] = { fg = colors.pumpkin }, -- used for inline code in markdown and for doc in python (""")
-  ["@text.uri"] = { fg = colors.violet, italic = true, underline = true }, -- urls, links and emails
-  ["@text.math"] = { fg = colors.aqua }, -- math environments (e.g. `$ ... $` in LaTeX)
-  ["@text.environment"] = { fg = colors.lukewarm }, -- text environments of markup languages
-  ["@text.environment.name"] = { fg = colors.aqua }, -- text indicating the type of an environment
-  ["@text.reference"] = { fg = colors.gum, bold = true }, -- references
-  ["@text.todo"] = { fg = colors.lukewarm }, -- todo notes
+  ["@text.title"] = "Title", -- titles like: # Example
+  ["@text.literal"] = { fg = colors.teal_20 }, -- used for inline code in markdown and for doc in python (""")
+  ["@text.uri"] = { fg = colors.purple_10, italic = true, underline = true }, -- urls, links and emails
+  ["@text.math"] = { fg = colors.magenta_10 }, -- math environments (e.g. `$ ... $` in LaTeX)
+  ["@text.environment"] = { fg = colors.green }, -- text environments of markup languages
+  ["@text.environment.name"] = { fg = colors.magenta_10 }, -- text indicating the type of an environment
+  ["@text.reference"] = { fg = colors.teal_10, bold = true }, -- references
+  ["@text.todo"] = { fg = colors.green }, -- todo notes
   -- Tags
-  ["@tag"] = { fg = colors.gum }, -- Tags like html tag names.
-  ["@tag.attribute"] = { fg = colors.violet, italic = true }, -- Tags like html tag names.
-  ["@tag.delimiter"] = { fg = colors.fire }, -- Tag delimiter like < > /
+  ["@tag"] = { fg = colors.teal_10 }, -- Tags like html tag names.
+  ["@tag.attribute"] = "@parameter", -- Tags like html tag names.
+  ["@tag.attribute.tsx"] = "@tag.attribute", -- Tags like html tag names.
+  ["@tag.delimiter"] = { fg = colors.teal_30 }, -- Tag delimiter like < > /
   -- Semantic tokens
-  ["@class"] = { fg = colors.dawn },
-  ["@struct"] = { fg = colors.aqua },
-  ["@enum"] = { fg = colors.lukewarm },
-  ["@enumMember"] = { fg = colors.aqua },
-  ["@event"] = { fg = colors.fire },
-  ["@interface"] = { fg = colors.gum },
-  ["@modifier"] = { fg = colors.plump },
-  ["@regexp"] = { fg = colors.pumpkin },
-  ["@typeParameter"] = { fg = colors.lukewarm },
-  ["@decorator"] = { fg = colors.pumpkin },
+  ["@class"] = { fg = colors.magenta_20 },
+  ["@struct"] = { fg = colors.magenta_10 },
+  ["@enum"] = { fg = colors.green },
+  ["@enumMember"] = { fg = colors.magenta_10 },
+  ["@event"] = { fg = colors.teal_30 },
+  ["@interface"] = { fg = colors.teal_10 },
+  ["@modifier"] = { fg = colors.purple_20 },
+  ["@regexp"] = { fg = colors.teal_20 },
+  ["@typeParameter"] = { fg = colors.green },
+  ["@decorator"] = { fg = colors.teal_20 },
   -- Language specific:
 
   -- css
-  ["@property.css"] = { fg = colors.pumpkin },
-  ["@property.id.css"] = { fg = colors.violet },
-  ["@property.class.css"] = { fg = colors.lukewarm },
-  ["@type.css"] = { fg = colors.pumpkin },
-  ["@type.tag.css"] = { fg = colors.lukewarm },
-  ["@string.plain.css"] = { fg = colors.pumpkin },
-  ["@number.css"] = { fg = colors.gum },
+  ["@property.css"] = "@property",
+  ["@tag.css"] = "@variable.tsx", -- Tags like html tag names.
+  ["@property.class.css"] = { fg = colors.green },
+  ["@type.css"] = { fg = colors.teal_20 },
+  ["@type.tag.css"] = { fg = colors.green },
+  ["@string.plain.css"] = { fg = colors.teal_20 },
+  ["@string.css"] = { fg = colors.red, bold = true },
+  ["@number.css"] = "Number",
   -- toml
-  ["@property.toml"] = { fg = colors.plump }, -- Differentiates between string and properties
+  ["@property.toml"] = { fg = colors.purple_20 }, -- Differentiates between string and properties
   -- json
-  ["@label.json"] = { fg = colors.aqua }, -- For labels: label: in C and :label: in Lua.
+  ["@label.json"] = { fg = colors.magenta_10 }, -- For labels: label: in C and :label: in Lua.
   -- lua
-  ["@constructor.lua"] = { fg = colors.gum }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+  ["@constructor.lua"] = { fg = colors.teal_10 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
   -- typescript
-  ["@constructor.typescript"] = { fg = colors.lukewarm },
+  ["@constructor.typescript"] = { fg = colors.green },
   -- TSX (Typescript React)
   ["@type.dart"] = "Type",
-  ["@constructor.tsx"] = { fg = colors.lukewarm },
-  ["@tag.attribute.tsx"] = { fg = colors.gum, italic = true },
+  ["@constructor.tsx"] = { fg = colors.green },
   -- cpp
-  ["@property.cpp"] = { fg = colors.lukewarm },
+  ["@property.cpp"] = { fg = colors.green },
   -- yaml
-  ["@field.yaml"] = { fg = colors.gum }, -- For fields.
+  ["@field.yaml"] = { fg = colors.teal_10 }, -- For fields.
   -- Ruby
-  ["@symbol.ruby"] = { fg = colors.fire },
+  ["@symbol.ruby"] = { fg = colors.teal_30 },
   -- PHP
   ["@type.qualifier.php"] = "Keyword", -- type qualifiers (e.g. `const`)
   ["@method.php"] = "Function",
@@ -353,12 +361,17 @@ colorscheme.highlight_all({
   ["@lsp.type.decorator"] = "@decorator",
   ["@lsp.type.typeParameter"] = "@typeParameter",
   ["@lsp.type.property"] = "@property",
+  ["@lsp.type.function.typescriptreact"] = "@function",
+  ["@lsp.mod.readonly.typescriptreact"] = { fg = colors.magenta_10, italic = true },
+  ["@lsp.type.property.typescriptreact"] = "@variable.member",
+  ["@lsp.typemod.function.local.typescriptreact"] = "@function.call",
+
   --}}}
 
   -- Folds
   FoldColumn = { bg = colors.faded, bold = true },
   Folded = { bg = nil, italic = true },
-  UfoFoldedEllipsis = { fg = colors.pumpkin, bold = true },
+  UfoFoldedEllipsis = { fg = colors.teal_20, bold = true },
   -- Diffs
   DiffAdd = { fg = colors.black, bg = colors.diffAdd },
   diffAdded = "DiffAdd",
@@ -375,7 +388,7 @@ colorscheme.highlight_all({
   -- Searching
   IncSearch = { bold = true, underline = true },
   Search = { sp = colors.white, underline = true },
-  MatchParen = { fg = colors.plump, bold = true, underline = true },
+  MatchParen = { fg = colors.purple_20, bold = true, underline = true },
   -- Spelling
   SpellBad = { sp = colors.error, undercurl = true },
   SpellCap = { sp = colors.warning, undercurl = true },
@@ -390,8 +403,8 @@ colorscheme.highlight_all({
   Question = { fg = colors.orange_light, underline = true },
   Info = { fg = colors.faded, bold = true },
   InfoMsg = { fg = colors.faded, bold = true },
-  Hint = { fg = colors.violet, bold = true },
-  HintMsg = { fg = colors.violet, bold = true },
+  Hint = { fg = colors.purple_10, bold = true },
+  HintMsg = { fg = colors.purple_10, bold = true },
   Todo = { fg = colors.black, bg = colors.cyan, bold = true },
   Warning = { fg = colors.warning, bold = true },
   WarningMsg = { fg = colors.warning, bold = true },
@@ -411,11 +424,11 @@ colorscheme.highlight_all({
   DiagnosticFloatingInfo = "InfoMsg",
   DiagnosticSignInfo = "DiagnosticFloatingInfo",
   DiagnosticUnderlineError = { sp = colors.error, undercurl = true },
-  DiagnosticUnderlineHint = { sp = colors.violet, undercurl = true },
+  DiagnosticUnderlineHint = { sp = colors.purple_10, undercurl = true },
   DiagnosticUnderlineInfo = { sp = colors.faded_lighter, undercurl = true },
   DiagnosticUnderlineWarn = { sp = colors.warning, undercurl = true },
   -- Misc
-  Directory = { fg = colors.pumpkin },
+  Directory = { fg = colors.teal_20 },
   VertSplit = { fg = colors.faded_darker },
   -- Telescope {{{
   TelescopeNormal = { bg = colors.background },
@@ -430,9 +443,9 @@ colorscheme.highlight_all({
   -- }}}
 
   -- Gitsigns
-  GitSignsAdd = { fg = colors.lukewarm },
-  GitSignsChange = { fg = colors.fire },
-  GitSignsDelete = { fg = colors.plump },
+  GitSignsAdd = { fg = colors.green },
+  GitSignsChange = { fg = colors.teal_30 },
+  GitSignsDelete = { fg = colors.purple_20 },
   GitSignsCurrentLineBlame = { fg = colors.faded_lighter },
   -- lazy.nvim
   LazyButton = "TabLine",
@@ -456,12 +469,12 @@ colorscheme.highlight_all({
   LazyUrl = "Underlined",
   -- LSPSaga
   SagaNormal = { bg = colors.background },
-  TitleString = { fg = colors.plump, bold = true },
+  TitleString = { fg = colors.purple_20, bold = true },
   TitleIcon = "TitleString",
   TitleSymbol = { bg = colors.none },
   TitleFileIcon = "Title",
-  RenameBorder = { fg = colors.plump },
-  RenameNormal = { fg = colors.plump },
+  RenameBorder = { fg = colors.purple_20 },
+  RenameNormal = { fg = colors.purple_20 },
   CodeActionText = "Normal",
   DefinitionCount = "Number",
   DefinitionIcon = "Special",
@@ -471,8 +484,8 @@ colorscheme.highlight_all({
   TargetWord = "Title",
   -- nvim-cmp
   CmpItemAbbr = "Normal",
-  CmpItemAbbrMatchFuzzy = { fg = colors.gum, underline = true },
-  CmpItemAbbrMatchFuzzyDefault = { fg = colors.gum, underline = true },
+  CmpItemAbbrMatchFuzzy = { fg = colors.teal_10, underline = true },
+  CmpItemAbbrMatchFuzzyDefault = { fg = colors.teal_10, underline = true },
   CmpItemKindClass = "@class",
   CmpItemKindColor = "Label",
   CmpItemKindConstant = "Constant",
@@ -500,32 +513,33 @@ colorscheme.highlight_all({
   CmpItemKindValue = "CmpItemKindConstantDefault",
   CmpItemKindVariable = "@variable",
   -- Noice
-  NoiceCmdlinePopup = { fg = colors.fire, bold = true },
+  NoiceCmdlinePopup = { fg = colors.teal_30, bold = true },
   NoiceCmdlineIcon = "NoiceCmdlinePopup",
   NoiceCmdlinePopupBorder = "NoiceCmdlinePopup",
   NoicePopupBorder = "FloatBorder",
   NoicePopupmenuBorder = "FloatBorder",
   NoiceCmdlinePopupBorderHelp = "NoiceCmdlineIconHelp",
   NoiceCmdlinePopupBorderLua = "NoiceCmdlineIconLua",
-  NoiceCmdlineIconHelp = { fg = colors.lukewarm },
-  NoiceCmdlineIconLua = { fg = colors.aqua },
-  NoiceCmdlineIconSearch = { fg = colors.gum },
+  NoiceCmdlineIconHelp = { fg = colors.green },
+  NoiceCmdlineIconLua = { fg = colors.magenta_10 },
+  NoiceCmdlineIconSearch = { fg = colors.teal_10 },
   -- Notify
   NotifyERRORBorder = "Error",
   NotifyWARNBorder = "Warning",
   NotifyINFOBorder = "Info",
   NotifyDEBUGBorder = "Debug",
-  NotifyTRACEBorder = "NonText",
+  NotifyTRACEBorder = "Comment",
   NotifyERRORIcon = "Error",
   NotifyWARNIcon = "Warning",
   NotifyINFOIcon = "Info",
   NotifyDEBUGIcon = "Debug",
-  NotifyTRACEIcon = "NonText",
+  NotifyTRACEIcon = "Comment",
   NotifyERRORTitle = "Error",
   NotifyWARNTitle = "Warning",
   NotifyINFOTitle = "Info",
   NotifyDEBUGTitle = "Debug",
-  NotifyTRACETitle = "NonText",
+  NotifyTRACETitle = "Comment",
+  NotifyBackground = { bg = colors.background },
   -- symbols-outline.nvim
   FocusedSymbol = {},
   SymbolsOutlineConnector = "Delimiter",
@@ -583,7 +597,7 @@ colorscheme.highlight_terminal({
   [3] = colors.green_dark,
   [4] = colors.orange,
   [5] = colors.blue,
-  [6] = colors.magenta_dark,
+  [6] = colors.magenta_10,
   [7] = colors.teal,
   [8] = colors.gray,
   [9] = colors.gray_dark,
