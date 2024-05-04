@@ -140,7 +140,7 @@ colorscheme.highlight_all({
   ["@error"] = "Error",
   ["@preproc"] = "PreProc", -- various preprocessor directives & shebangs
   ["@define"] = "Define", -- preprocessor definition directives
-  ["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
+  ["@operator"] = "Operator", -- For any operator: +, but also -> and * in C.
   -- Punctuation
   ["@punctuation.delimiter"] = "Delimiter", -- For delimiters ie: .
   ["@punctuation.bracket"] = { fg = colors.pumpkin }, -- For brackets and parenthesis.
@@ -259,6 +259,75 @@ colorscheme.highlight_all({
   ["@type.qualifier.php"] = "Keyword", -- type qualifiers (e.g. `const`)
   ["@method.php"] = "Function",
   ["@method.call.php"] = "Function",
+  -- }}}
+  -- Markup {{{
+
+  ["@markup"] = "@none",
+  ["@markup.emphasis"] = {
+    italic = true,
+  },
+  ["@markup.environment"] = "Macro",
+  ["@markup.environment.name"] = "Type",
+  ["@markup.heading"] = "Title",
+  ["@markup.heading.1.markdown"] = {
+    bold = true,
+    fg = "#7aa2f7",
+  },
+  ["@markup.heading.2.markdown"] = {
+    bold = true,
+    fg = "#e0af68",
+  },
+  ["@markup.heading.3.markdown"] = {
+    bold = true,
+    fg = "#9ece6a",
+  },
+  ["@markup.heading.4.markdown"] = {
+    bold = true,
+    fg = "#1abc9c",
+  },
+  ["@markup.heading.5.markdown"] = {
+    bold = true,
+    fg = "#bb9af7",
+  },
+  ["@markup.heading.6.markdown"] = {
+    bold = true,
+    fg = "#9d7cd8",
+  },
+  ["@markup.link"] = {
+    fg = "#1abc9c",
+  },
+  ["@markup.link.label"] = "SpecialChar",
+  ["@markup.link.label.symbol"] = "Identifier",
+  ["@markup.link.url"] = "Underlined",
+  ["@markup.list"] = {
+
+    fg = "#89ddff",
+  },
+  ["@markup.list.checked"] = {
+    fg = "#73daca",
+  },
+  ["@markup.list.markdown"] = {
+    bold = true,
+    fg = "#ff9e64",
+  },
+  ["@markup.list.unchecked"] = {
+    fg = "#7aa2f7",
+  },
+  ["@markup.math"] = "Special",
+  ["@markup.raw"] = "String",
+  ["@markup.raw.markdown_inline"] = {
+    bg = "#414868",
+    fg = "#7aa2f7",
+  },
+  ["@markup.strikethrough"] = {
+    strikethrough = true,
+  },
+  ["@markup.strong"] = {
+    bold = true,
+  },
+  ["@markup.underline"] = {
+    underline = true,
+  },
   -- }}}
 
   -- LSP {{{
