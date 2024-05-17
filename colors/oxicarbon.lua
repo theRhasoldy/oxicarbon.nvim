@@ -10,7 +10,7 @@ local colors = {
   faded = { "#525252", 3 },
   faded_lighter = { "#6F6F6F", 4 },
   faded_darker = { "#393939", 5 },
-  cursor = { "#262626", 6 },
+  cursor = { "#3d3d3d", 6 },
   teal_10 = { "#20D5D2", 8 },
   teal_20 = { "#00BAB6", 7 },
   teal_30 = { "#009E9A", 9 },
@@ -39,6 +39,7 @@ colorscheme.highlight_all({
   end,
   PmenuSbar = { bg = colors.faded_darker },
   PmenuSel = "CursorLine",
+
   PmenuThumb = { bg = colors.faded_darker },
   WildMenu = "PmenuSel",
   LineNr = { fg = colors.faded },
