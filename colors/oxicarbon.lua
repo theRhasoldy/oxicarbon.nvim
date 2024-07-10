@@ -50,6 +50,9 @@ colorscheme.highlight_all({
   end,
   StatusLineTerm = "StatusLine",
   StatusLineTermNC = "StatusLineNC",
+  -- Winbar
+  WinBar = "StatusLine",
+  WinBarNC = "StatusLineNC",
   -- Tabline
   TabLine = function(self)
     return { fg = self.Normal.fg, bg = self.StatusLine.bg }
