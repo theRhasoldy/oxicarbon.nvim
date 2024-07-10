@@ -34,6 +34,7 @@ colorscheme.highlight_all({
   ColorColumn = { fg = colors.none, reverse = true },
   NormalFloat = { bg = colors.none },
   FloatBorder = { bg = colors.background, fg = colors.faded_darker },
+  WinSeparator = { bg = colors.none, fg = colors.faded_darker },
   Pmenu = function(self)
     return { fg = self.Normal.fg, bg = colors.faded_darker }
   end,
