@@ -10,7 +10,6 @@ local colors = {
   faded = { "#525252", 3 },
   faded_lighter = { "#6F6F6F", 4 },
   faded_darker = { "#393939", 5 },
-  cursor = { "#3d3d3d", 6 },
   teal_10 = { "#20D5D2", 8 },
   teal_20 = { "#00BAB6", 7 },
   teal_30 = { "#009E9A", 9 },
@@ -75,8 +74,8 @@ colorscheme.highlight_all({
   -- Cursor {{{
   Cursor = { fg = colors.pink, bg = colors.pink, reverse = true },
   CursorIM = "Cursor",
-  CursorColumn = { bg = colors.cursor },
-  CursorLine = { bg = colors.cursor },
+  CursorColumn = { bg = colors.faded_darker },
+  CursorLine = { bg = colors.faded_darker },
   CursorLineNr = function(self)
     return { fg = colors.purple_20, bg = self.LineNr.bg, bold = true }
   end,
