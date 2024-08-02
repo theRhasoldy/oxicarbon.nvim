@@ -543,7 +543,7 @@ colorscheme.highlight_all({
   NotifyINFOTitle = "Info",
   NotifyDEBUGTitle = "Debug",
   NotifyTRACETitle = "Comment",
-  NotifyBackground = { bg = colors.background },
+  NotifyBackground = { bg = colors.none },
   -- symbols-outline.nvim
   FocusedSymbol = {},
   SymbolsOutlineConnector = "Delimiter",
