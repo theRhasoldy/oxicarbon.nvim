@@ -32,7 +32,7 @@ colorscheme.highlight_all({
   -- Editor UI {{{
   ColorColumn = { fg = colors.none, reverse = true },
   NormalFloat = { bg = colors.none },
-  FloatBorder = { bg = colors.background, fg = colors.faded_darker },
+  FloatBorder = { bg = colors.none, fg = colors.faded_darker },
   WinSeparator = { bg = colors.none, fg = colors.faded_darker },
   Pmenu = function(self)
     return { fg = self.Normal.fg, bg = colors.faded_darker }
@@ -433,9 +433,9 @@ colorscheme.highlight_all({
   DiagnosticUnderlineWarn = { sp = colors.warning, undercurl = true },
   -- Misc
   Directory = { fg = colors.teal_20 },
-  VertSplit = { fg = colors.faded_darker },
+  VertSplit = "FloatBorder",
   -- Telescope {{{
-  TelescopeNormal = { bg = colors.background },
+  TelescopeNormal = { bg = colors.none },
   TelescopeBorder = "FloatBorder",
   TelescopeTitle = "Title",
   TelescopeSelection = "CursorLine",
@@ -477,7 +477,7 @@ colorscheme.highlight_all({
   TitleIcon = "TitleString",
   TitleSymbol = { bg = colors.none },
   TitleFileIcon = "Title",
-  RenameBorder = { fg = colors.purple_20 },
+  RenameBorder = { bg = colors.none, fg = colors.purple_20 },
   RenameNormal = { fg = colors.purple_20 },
   CodeActionText = "Normal",
   DefinitionCount = "Number",
